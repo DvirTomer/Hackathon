@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Show File-select Fields</h1>
+
+<h3>Show a file-select field which allows only one file to be chosen:</h3>
+
+    <img id ="img" >
+    <p id="b64"></p>
+  <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile" onchange="test(myfile.files[0])"><br><br>
+  <input type="submit">
+
+<script>
+    function test(fil)
+    {
+        var FR = new FileReader();
+        FR.addEventListener("load",function(e)
+        {
+            document.getElementById("img").src = e.target.result;
+            document.getElementById("b64").innerHTML = e.target.result;
+        });
+        FR.readAsDataURL(fil);
+    }
+</script>
+
+</body>
+</html>
+  

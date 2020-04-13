@@ -1,3 +1,4 @@
+
 body {
     font-family: sans-serif;
     background-color: #dedede;
@@ -35,6 +36,12 @@ body {
     width: 40%;
     margin-right: 15px;
   }
+  .pet-photo2 {
+   text-align: center;
+    width: 40%;
+    margin-right: 15px;
+    
+  }
   
   .pet-name {
     font-size: 2rem;
@@ -63,4 +70,119 @@ body {
     text-align: center;
     margin: 0;
   }
+  header
+{
+    height: 65px;
+    background: #000;
+}
+nav
+{
+  width: 500px;
+  height: 65px;
+  background: #000;
+  display:inline-block;
+  float: right;
+}  
+nav a 
+{
+   line-height: 65px;
+   text-decoration: none;
+   font-family: 'Roboto Slab', serif;
+   font-weight: 300;
+   padding-left: 30px;
+   padding-right: 30px;
+   color: #50adb5;
+}
+h1 
+{
+    font-family: 'Courgette', cursive;
+    margin-left: 30px ;
+    line-height: 65px;
+    font-weight: normal;
+    display:inline-block;
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+}
+h3
+{
+    font-family: 'Courgette', cursive;
+    margin-left: 30px ;
+    line-height: 65px;
+    font-weight: normal;
+    display:inline-block;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(39, 36, 36);
+}
+.pet-name2 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+  background: url('img/pexels-photo-807598.jpeg');
+}
+img.lower
+{
+height: 20%;
+width: 20%;
+}
+.gallery{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 30px;
+
+
+}
+.card-inner{
+  margin-left: 4rem;
+}
+/* Style inputs with type="text", select elements and textareas */
+.input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
   
+}
+
+/* Style the submit button with a specific background color etc */
+/* .input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+} */
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+  display: block;
+ text-align: center;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.textarea2{
+  display: block;
+  margin-left: auto;
+margin-right: auto;
+}
+
+.pet-photo4{
+  display: block;
+ text-align: center;
+}
