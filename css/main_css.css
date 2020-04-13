@@ -1,0 +1,134 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+}
+header
+{
+    height: 65px;
+    background: #000;
+}
+h1 
+{
+    font-family: 'Courgette', cursive;
+    margin-left: 30px ;
+    line-height: 65px;
+    font-weight: normal;
+    display:inline-block;
+}
+nav
+{
+  width: 500px;
+  height: 65px;
+  background: #000;
+  display:inline-block;
+  float: right;
+}
+nav a 
+{
+   line-height: 65px;
+   text-decoration: none;
+   font-family: 'Roboto Slab', serif;
+   font-weight: 300;
+   padding-left: 30px;
+   padding-right: 30px;
+   color: #50adb5;
+}
+main
+{
+  background: #444;
+  width: 100%;
+  height: calc(100% - 65px);
+  display: flex;
+  flex-wrap: wrap;
+}
+section
+{
+    box-sizing: border-box;
+    height: 33.33%;
+    position: relative;
+}
+.r1s1
+{
+     width: calc(100% / 12*7);
+     background: url('img/pexels-photo-807598.jpeg');
+     background-size: auto;
+
+}
+.r1s2
+{
+
+    width: calc(100% / 12*5);
+    background: url('img/1.jfif');
+    background-size: auto;
+    background-size: contain;
+
+}
+.r2s1
+{
+    width: calc(100% / 12*5);
+    background: url('img/sun.jfif') bottom center ;
+    background-size: cover;
+    
+}
+.r2s2
+{
+    width: calc(100% / 12*3);
+    background: #c6245a;
+
+}
+.r2s3
+{
+    width: calc(100% / 12*4);
+    background: url('img/flight-landscape-nature-sky-36717.jpg');
+    background-size: cover;
+}
+.r3s1
+{
+    width: calc(100% / 12*3);
+    background: #050304;
+
+}
+.r3s2
+{
+    width: calc(100% / 12*3);
+    background: url('img/kids.jfif');
+    background-size: cover;
+}
+.r3s3
+{
+    width: calc(100% / 12*6);
+    background: url('img/pexels-photo-459225.jpeg');
+    background-size: cover;
+}
+section article
+{
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) ;
+    font-family: 'Roboto Slab', serif;
+
+
+}
+h3
+{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 100;
+    font-size: 18pt;
+}
+article a
+{
+  width: 90px;
+  height: 34px;
+  background: #fff;
+  color: #000;
+  text-decoration:  none;
+  font-family: 'Roboto Slab', serif;
+}
+
+
+
