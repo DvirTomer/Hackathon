@@ -280,7 +280,7 @@ function Hello() {
   
 function hello6(txt,idCourse,name,file2,file3)
 {
-  fetch('http://127.0.0.1:8080/addquestion?courseName='+val+'&degreeID='+degid)
+  fetch('http://127.0.0.1:8080/addquestion?txt='+txt+'&idCourse='+idCourse+'&name='+name+'&file='+file2+'&file2='+file3)
           .then((response) => {
             return response.json();
             
