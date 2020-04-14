@@ -39,7 +39,7 @@ function Hello() {
            return `
            <div class="animal">
            <img class="pet-photo" src="https://www.binaryit.com.au/wp-content/uploads/2018/01/best-laptop-for-students.jpg">
-           <h2 class="pet-name">  <a> <button value = ${pet.courseName} onclick = "Hello3(this.value)">${pet.courseName}</button> </a>
+           <h2 class="pet-name">  <a> <button value = ${pet.courseName} onclick = "Hello3(this.value,${pet.degreeID})">${pet.courseName}</button> </a>
            </h2> 
            </div>
            `    
@@ -49,8 +49,8 @@ function Hello() {
         
   
       }
-      function Hello3(val) {
-        fetch('http://127.0.0.1:8080/question?courseName='+val)
+      function Hello3(val,degid) {
+        fetch('http://127.0.0.1:8080/question?courseName='+val+'&degreeID='+degid)
           .then((response) => {
             return response.json();
             
@@ -69,6 +69,25 @@ function Hello() {
              </div>
              `    
             }).join('')}
+            <div>
+    
+        <form action="javascript:hello6((subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+      
+       
+ 
+           <p id="b64" > </p>
+           <p id="b65" > </p>
+          <label for="subject" class="pet-photo4">Write comment</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
+
+          <label for="myfile">Select a file:</label>
+          <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
+                  
+          <input type="submit" value="submit" class="pet-photo4">
+      
+        </form>
+        
+      </div>
                  `
           });
           
@@ -122,7 +141,7 @@ function Hello() {
                                 </p>
                                 <div class="clearfix"></div>
                                  <p>${pet.txt}</p>
-                                 <p>${pet.txt}</p>
+                                 <p> <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot"></p>
                                  <p>
                                      <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
                                      <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
@@ -210,6 +229,7 @@ function Hello() {
                                 </p>
                                 <div class="clearfix"></div>
                                  <p>${pet.txt}</p>
+                                 <p> <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot"></p>
                                  <p>
                                      <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
                                      <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
@@ -258,3 +278,46 @@ function Hello() {
         FR.readAsDataURL(fil);
     }
   
+function hello6(txt,idCourse,name,file2,file3)
+{
+  fetch('http://127.0.0.1:8080/addquestion?courseName='+val+'&degreeID='+degid)
+          .then((response) => {
+            return response.json();
+            
+    
+          })
+          .then((data) => {
+            console.log(data);
+            console.log(data.length);
+            document.getElementById("app").innerHTML = `<h2 class="app-title"> question (${data.length} results)<h2>
+            ${data.map(function(pet){
+             return `
+             <div class="animal">
+             <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">
+             <h2 class="pet-name">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a>
+             </h2> 
+             </div>
+             `    
+            }).join('')}
+            <div>
+    
+        <form action="javascript:hello6((subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+      
+       
+ 
+           <p id="b64" > </p>
+           <p id="b65" > </p>
+          <label for="subject" class="pet-photo4">Write comment</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
+
+          <label for="myfile">Select a file:</label>
+          <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
+                  
+          <input type="submit" value="submit" class="pet-photo4">
+      
+        </form>
+        
+      </div>
+                 `
+          });
+}
