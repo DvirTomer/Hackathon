@@ -295,32 +295,32 @@ function hello6(txt,idCourse,name,file2,file3)
             document.getElementById("app").innerHTML = `<h2 class="app-title"> question (${data.length} results)<h2>
             ${data.map(function(pet){
              return `
-             <div class="animal">
-             <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">
-             <h2 class="pet-name">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a>
-             </h2> 
+             <div class="animalques">
+             <h2 class="pet-nameques">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a></h2> 
+             <p>${pet.txt}</p>
+             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">            
              </div>
              `    
             }).join('')}
-            <div>
-    
-        <form action="javascript:hello6((subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+            <div class="animalques">
+            <form action="javascript:hello6((subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
       
        
  
-           <p id="b64" > </p>
-           <p id="b65" > </p>
-          <label for="subject" class="pet-photo4">Write comment</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
+            <p id="b64" > </p>
+            <p id="b65" > </p>
+           <label for="subject" class="pet-photo4">Add question</label>
+           <textarea class="textarea2" id="subject" name="subject" placeholder="Write something.." style="width:400px" ></textarea>
+ 
+           <label for="myfile">Select a file:</label>
+           <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
+                   
+           <input type="submit" value="submit" class="pet-photo4">
+       
+         </form>
+         
+             </div>
 
-          <label for="myfile">Select a file:</label>
-          <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
-                  
-          <input type="submit" value="submit" class="pet-photo4">
-      
-        </form>
-        
-      </div>
                  `
           });
 }
