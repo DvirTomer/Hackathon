@@ -62,8 +62,8 @@ function Hello() {
             document.getElementById("app").innerHTML = `<h2 class="app-title"> question (${data.length} results)<h2>
             ${data.map(function(pet){
              return `
-             <div class="animalques" >
-             <h2  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a></h2> 
+             <div class="animalques">
+             <h2 class="pet-nameques">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a></h2> 
              <p>${pet.txt}</p>
              <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">            
              </div>
