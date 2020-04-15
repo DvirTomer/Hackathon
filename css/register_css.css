@@ -1,3 +1,9 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     background-image: url(http://getwallpapers.com/wallpaper/full/6/5/d/632227.jpg);
     background-size: cover;
@@ -11,17 +17,16 @@ h1
     line-height: 65px;
     font-weight: normal;
     display:inline-block;
-    color: rgb(70, 184, 219);
+    color: #50adb5;
 }
 nav
 {
-  width: 500px;
+  width: 700px;
   height: 65px;
-  
   display:inline-block;
   float: right;
 }
-nav a 
+nav a
 {
    line-height: 65px;
    text-decoration: none;
@@ -29,7 +34,7 @@ nav a
    font-weight: 300;
    padding-left: 30px;
    padding-right: 30px;
-   color: rgb(70, 184, 219);
+   color: #50adb5;
 }
 .container {
     width: 406px;

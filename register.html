@@ -6,14 +6,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body onload="javascript:setname()">
     <header>
+        <script>
+            function setname()
+            {
+            if(sessionStorage.getItem("firstName") != null)
+            {
+              document.getElementById("h1h").innerText = "Hi "+sessionStorage.getItem("firstName")+ " " + sessionStorage.getItem("lastName")+ "!";
+            }
+            else{
+              document.getElementById("h1h").innerHTML = "";
+            }
+          }
+          </script>
         <h1>TVM</h1>
         <nav>
+            <a id="h1h" href="#"> </a>
             <a href="main.html"> Home</a>
             <a href=#> Help</a>
             <a href="login.html"> Sign in</a>
             <a href="register.html"> Sign up</a>
+           
         </nav>
     </header>
     <div class="container">
