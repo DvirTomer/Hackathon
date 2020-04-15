@@ -12,9 +12,9 @@ function Hello() {
         document.getElementById("app").innerHTML = `<h2 class="app-title"> Degrees (${data.length} results)<h2>
         ${data.map(function(pet){
          return `
-         <div class="animal">
-         <img class="pet-photo" src="${pet.imgsrc}">
-         <h2 class="pet-name">  <a> <button value = ${pet.degreeName} onclick = "Hello2(this.value)">${pet.degreeName}</button> </a>
+         <div id=${pet.degreeName} class="animal" onclick = "Hello2(this.id)">
+         <img class="pet-photo" src="${pet.imgsrc}" >
+         <h2 class="pet-name">  <p> ${pet.degreeName} </p>
          </h2> 
          </div>
          `    
@@ -37,9 +37,9 @@ function Hello() {
           document.getElementById("app").innerHTML = `<h2 class="app-title"> Courses (${data.length} results)<h2>
           ${data.map(function(pet){
            return `
-           <div class="animal">
+           <div id=${pet.courseName} class="animal" onclick = "Hello3(this.id,${pet.degreeID},${pet.idcourse})">
            <img class="pet-photo" src="https://www.binaryit.com.au/wp-content/uploads/2018/01/best-laptop-for-students.jpg">
-           <h2 class="pet-name">  <a> <button value = ${pet.courseName} onclick = "Hello3(this.value,${pet.degreeID},${pet.idcourse})">${pet.courseName}</button> </a>
+           <h2 class="pet-name"> <p> ${pet.courseName} </p>
            </h2> 
            </div>
            `    
@@ -62,10 +62,10 @@ function Hello() {
             document.getElementById("app").innerHTML = `<h2 class="app-title"> question (${data.length} results)<h2>
             ${data.map(function(pet){
              return `
-             <div class="animalques">
-             <h2 class="pet-nameques">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a></h2> 
-             <p>${pet.txt}</p>
-             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">            
+             <div id=${pet.idquestions} onclick = "Hello4(this.id)" class="animalques">
+             <h2 class="pet-nameques"> </h2> 
+             <p>Written By: ${pet.name}  <br /> ${pet.txt}</p>
+             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" >            
              </div>
              `    
             }).join('')}
