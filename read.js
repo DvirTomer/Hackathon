@@ -39,7 +39,7 @@ function Hello() {
            return `
            <div class="animal">
            <img class="pet-photo" src="https://www.binaryit.com.au/wp-content/uploads/2018/01/best-laptop-for-students.jpg">
-           <h2 class="pet-name">  <a> <button value = ${pet.courseName} onclick = "Hello3(this.value,${pet.degreeID})">${pet.courseName}</button> </a>
+           <h2 class="pet-name">  <a> <button value = ${pet.courseName} onclick = "Hello3(this.value,${pet.degreeID},${pet.idcourse})">${pet.courseName}</button> </a>
            </h2> 
            </div>
            `    
@@ -49,7 +49,7 @@ function Hello() {
         
   
       }
-      function Hello3(val,degid) {
+      function Hello3(val,degid,cid) {
         fetch('http://127.0.0.1:8080/question?courseName='+val+'&degreeID='+degid)
           .then((response) => {
             return response.json();
@@ -69,9 +69,11 @@ function Hello() {
              </div>
              `    
             }).join('')}
-            <div class="animalques">
-            <form action="javascript:hello6((subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
-      
+            
+
+            <div id="myDIV" class="animalques" >
+            <form action="javascript:hello6((subject.value),${cid},(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+            
        
  
             <p id="b64" > </p>
@@ -87,10 +89,13 @@ function Hello() {
          </form>
          
              </div>
-
-                 `
+             
+                 ` 
+                  hidediv();
           });
-          
+         // hidediv();
+        //  var x = document.getElementById("myDIV");
+        //  console.log(x);
         }
          // <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">
           //                 <a href="data:image/jpg;base64,${pet.imgPath}" alt="Red dot"><img class="lower" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot"></a>
@@ -128,7 +133,8 @@ function Hello() {
                          <div class="row">
                              <div class="col-md-2">
                                  <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                                 <p class="text-secondary text-center">15 Minutes Ago</p>
+                                 <p id="timeago" class="text-secondary text-center">${datefunc(pet.date)}</p>
+                                 
                              </div>
                              <div class="col-md-10">
                                  <p>
@@ -151,11 +157,13 @@ function Hello() {
                      </div>
                  </div>
              </div>
-                 `    
-                }).join('')}
-                <div class="animal2">
+                 ` 
+                
 
-                <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+                }).join('')}
+                <div id="myDIV" class="animal2">
+
+                <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
       
        
  
@@ -173,17 +181,19 @@ function Hello() {
         
              </div>
                      `
- 
+                     hidediv();
               });
   
     
         }
 
-        function hello5(id,txt,idCourse,name,file2,file3)
+        function hello5(id,txt,idCourse,file2,file3)
         {
           console.log(file2);
-
-          fetch('http://127.0.0.1:8080/addcomment?idquestions='+id+'&txt='+txt+'&idCourse='+idCourse+'&name='+name+'&file='+file2+'&file2='+file3)
+          const start = Date.now();
+        var date = new Date(start);
+          var name = sessionStorage.getItem("firstName")+ " " + sessionStorage.getItem("lastName");
+          fetch('http://127.0.0.1:8080/addcomment?idquestions='+id+'&txt='+txt+'&idCourse='+idCourse+'&name='+name+'&file='+file2+'&file2='+file3+'&date='+date)
               .then((response) => {
                 return response.json();
                 
@@ -216,7 +226,7 @@ function Hello() {
                          <div class="row">
                              <div class="col-md-2">
                                  <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                                 <p class="text-secondary text-center">15 Minutes Ago</p>
+                                 <p id="timeago" class="text-secondary text-center">${datefunc(pet.date)}</p>
                              </div>
                              <div class="col-md-10">
                                  <p>
@@ -241,12 +251,12 @@ function Hello() {
              </div>
                  `    
                 }).join('')}
-                <div class="animal">
+                <div id="myDIV" class="animal">
            
                 </div>
                     <div>
     
-        <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+        <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
       
        
  
@@ -264,6 +274,7 @@ function Hello() {
         
       </div>
                      `
+                    hidediv();
  
               });
         }
@@ -281,9 +292,12 @@ function Hello() {
         FR.readAsDataURL(fil);
     }
   
-function hello6(txt,idCourse,name,file2,file3)
+function hello6(txt,idCourse,file2,file3)
 {
-  fetch('http://127.0.0.1:8080/addquestion?txt='+txt+'&idCourse='+idCourse+'&name='+name+'&file='+file2+'&file2='+file3)
+  var name = sessionStorage.getItem("firstName")+ " " + sessionStorage.getItem("lastName");
+  const start = Date.now();
+  var date = new Date(start);
+  fetch('http://127.0.0.1:8080/addquestion?txt='+txt+'&idCourse='+idCourse+'&name='+name+'&file='+file2+'&file2='+file3+'&date='+date)
           .then((response) => {
             return response.json();
             
@@ -302,8 +316,8 @@ function hello6(txt,idCourse,name,file2,file3)
              </div>
              `    
             }).join('')}
-            <div class="animalques">
-            <form action="javascript:hello6((subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+            <div id="myDIV" class="animalques">
+            <form action="javascript:hello6((subject.value),${data[0].idCourse},(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
       
        
  
@@ -322,5 +336,102 @@ function hello6(txt,idCourse,name,file2,file3)
              </div>
 
                  `
+                 hidediv();
           });
+}
+
+function hidediv()
+{
+            console.log("hm");
+            var x = document.getElementById("myDIV");
+            if(sessionStorage.getItem("firstName") == null)
+            {
+              x.style.display = "none";
+            }
+            else
+            {
+              x.style.display = "block";
+            }
+          
+}
+
+
+function datefunc(x)
+{
+  //console.log("ASDASD");
+  var date = timeAgo(x);
+  return date;
+  
+}
+
+
+
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+
+function getFormattedDate(date, prefomattedDate = false, hideYear = false) {
+  const day = date.getDate();
+  const month = MONTH_NAMES[date.getMonth()];
+  const year = date.getFullYear();
+  const hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  if (minutes < 10) {
+    // Adding leading zero to minutes
+    minutes = `0${ minutes }`;
+  }
+
+  if (prefomattedDate) {
+    // Today at 10:20
+    // Yesterday at 10:20
+    return `${ prefomattedDate } at ${ hours }:${ minutes }`;
+  }
+
+  if (hideYear) {
+    // 10. January at 10:20
+    return `${ day }. ${ month } at ${ hours }:${ minutes }`;
+  }
+
+  // 10. January 2017. at 10:20
+  return `${ day }. ${ month } ${ year }. at ${ hours }:${ minutes }`;
+}
+
+
+// --- Main function
+function timeAgo(dateParam) {
+  if (!dateParam) {
+    return null;
+  }
+
+  const date = typeof dateParam === 'object' ? dateParam : new Date(dateParam);
+  const DAY_IN_MS = 86400000; // 24 * 60 * 60 * 1000
+  const today = new Date();
+  const yesterday = new Date(today - DAY_IN_MS);
+  const seconds = Math.round((today - date) / 1000);
+  const minutes = Math.round(seconds / 60);
+  const isToday = today.toDateString() === date.toDateString();
+  const isYesterday = yesterday.toDateString() === date.toDateString();
+  const isThisYear = today.getFullYear() === date.getFullYear();
+
+
+  if (seconds < 5) {
+    return 'now';
+  } else if (seconds < 60) {
+    return `${ seconds } seconds ago`;
+  } else if (seconds < 90) {
+    return 'about a minute ago';
+  } else if (minutes < 60) {
+    return `${ minutes } minutes ago`;
+  } else if (isToday) {
+    return getFormattedDate(date, 'Today'); // Today at 10:20
+  } else if (isYesterday) {
+    return getFormattedDate(date, 'Yesterday'); // Yesterday at 10:20
+  } else if (isThisYear) {
+    return getFormattedDate(date, false, true); // 10. January at 10:20
+  }
+
+  return getFormattedDate(date); // 10. January 2017. at 10:20
 }

@@ -10,7 +10,10 @@ body {
     max-width: 100%;
     height: auto;
   }
-  
+  #myDiv 
+  {
+    display: inline;
+  }
   .app-title {
     text-align: center;
     font-weight: normal;
@@ -71,13 +74,13 @@ body {
   header
 {
     height: 65px;
-    background: #000;
+   
 }
 nav
 {
   width: 700px;
   height: 65px;
-  background: #000;
+  
   display:inline-block;
   float: right;
 }  
