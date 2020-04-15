@@ -153,9 +153,9 @@ function Hello() {
              </div>
                  `    
                 }).join('')}
-                    <div>       
+                <div class="animal2">
 
-                    <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+                <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
       
        
  
@@ -164,14 +164,14 @@ function Hello() {
                    <label for="subject" class="pet-photo4">Write comment</label>
                    <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
          
-                   <label for="myfile">Select a file:</label>
+                   <label for="myfile" class="pet-photo4">Select a file:</label>
                    <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
                            
                    <input type="submit" value="submit" class="pet-photo4">
                
                  </form>
         
-      </div>
+             </div>
                      `
  
               });
@@ -241,6 +241,9 @@ function Hello() {
              </div>
                  `    
                 }).join('')}
+                <div class="animal">
+           
+                </div>
                     <div>
     
         <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},5,(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
