@@ -65,7 +65,7 @@ function Hello() {
              <div id=${pet.idquestions} onclick = "Hello4(this.id)" class="animalques">
              <h2 class="pet-nameques"> </h2> 
              <p>Written By: ${pet.name}  <br /> ${pet.txt}</p>
-             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" >            
+             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" onerror="this.style.display='none'" >            
              </div>
              `    
             }).join('')}
@@ -111,7 +111,7 @@ function Hello() {
                 console.log(data.length);
                 //document.getElementById("app").innerHTML = `<img class="pet-photo" src="data:image/jpg;base64,${data[0].imgPath}" alt="Red dot">`    <br />
 
-                document.getElementById("app").innerHTML = `<h2 class="app-title"> comments  (${data.length} results)  <br />  <img class="pet-photo2" src="data:image/jpg;base64,${data[0].imgPath}"  alt="Red dot"> <h2> <br />
+                document.getElementById("app").innerHTML = `<h2 class="app-title"> comments  (${data.length} results)  <br />  <img class="pet-photo2" src="data:image/jpg;base64,${data[0].imgPath}"  alt="Red dot" onerror="this.style.display='none'" > <h2> <br />
                
                 
                 ${data.map(function(pet){
@@ -147,7 +147,7 @@ function Hello() {
                                 </p>
                                 <div class="clearfix"></div>
                                  <p>${pet.txt}</p>
-                                 <p> <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot"></p>
+                                 <p> <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" onerror="this.style.display='none'" ></p>
                                  <p>
                                      <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
                                      <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
@@ -204,7 +204,7 @@ function Hello() {
                 console.log(data.length);
                 //document.getElementById("app").innerHTML = `<img class="pet-photo" src="data:image/jpg;base64,${data[0].imgPath}" alt="Red dot">`    <br />
 
-                document.getElementById("app").innerHTML = `<h2 class="app-title"> comments  (${data.length} results)  <br />  <img class="pet-photo2" src="data:image/jpg;base64,${data[0].imgPath}"  alt="Red dot"> <h2> <br />
+                document.getElementById("app").innerHTML = `<h2 class="app-title"> comments  (${data.length} results)  <br />  <img class="pet-photo2" src="data:image/jpg;base64,${data[0].imgPath}"  alt="Red dot" onerror="this.style.display='none'"> <h2> <br />
                
                 
                 ${data.map(function(pet){
@@ -239,7 +239,7 @@ function Hello() {
                                 </p>
                                 <div class="clearfix"></div>
                                  <p>${pet.txt}</p>
-                                 <p> <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot"></p>
+                                 <p> <img class="pet-photo" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" onerror="this.style.display='none'"></p>
                                  <p>
                                      <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
                                      <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
@@ -312,7 +312,7 @@ function hello6(txt,idCourse,file2,file3)
              <div class="animalques">
              <h2 class="pet-nameques">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a></h2> 
              <p>${pet.txt}</p>
-             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot">            
+             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" onerror="this.style.display='none'">            
              </div>
              `    
             }).join('')}
