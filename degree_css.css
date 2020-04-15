@@ -185,18 +185,48 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
-
+.textarea{
+  display: block;
+  margin-left:15px;
+  margin-right:15px;
+}
 .textarea2{
   display: block;
-  margin-left: auto;
-margin-right: auto;
+  margin-left:15px;
+  margin-right:15px;
 }
 
 .pet-photo4{
+  margin-bottom:15px;
   display: block;
  text-align: center;
 }
 .question{
   height: 20%;
   width: 20%;
+}
+.animalques {
+  width: 350px;
+  height: 350px;
+  padding: 20px;
+  float: left;
+  margin-top:15px;
+  margin-left:15px;
+  margin-right:15px;
+  margin-bottom:15px;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.pet-nameques{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+}
+.pet-photoques {
+  position: relative;
+  width: 60%;
+ height: 60%;
+ 
 }
