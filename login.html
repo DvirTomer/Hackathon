@@ -4,7 +4,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
@@ -22,7 +21,7 @@
     
             <div class="header">
             
-                <h3>Sign Up</h3>
+                <h3>log in</h3>
                 
                 <p>You want to fill out this form</p>
                 
@@ -30,24 +29,17 @@
             <div class="sep"></div>
     
             <div class="inputs">
-                <input id="firstname" type="text" placeholder="first name" />
-
-                <input id="lastname" type="text" placeholder="last name" />
-
                 <input id="mail" type="email" placeholder="e-mail" autofocus />
             
                 <input id="pass" type="password" placeholder="Password" />
                 
-                <div class="checkboxy">
-                    <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">I accept the terms of use</label>
-                </div>
                 
-                <button type="button" id= "submit" onclick="javascript:register((mail.value),(pass.value),(firstname.value),(lastname.value))">CLICK</button>
+                <button type="button" id= "submit" onclick="javascript:register((mail.value),(pass.value))">CLICK</button>
                 <script>
-                    function register(m,p,f,l)
+                    function register(m,p)
                     {
                         //alert("HI "+m+" "+p);
-                        fetch('http://127.0.0.1:8080/registar?mail='+m+'&pass='+p+'&firstName='+f+'&lastName='+l)
+                        fetch('http://127.0.0.1:8080/login?mail='+m+'&pass='+p)
                         .then(data=>{return data.json()})
                         .then(res=>
                         {
@@ -56,10 +48,13 @@
                                 var bad  = "400";
                                 if(bad.localeCompare(res.status) == 0)
                                 {
-                                    alert("Allready registred");
+                                    alert("Unable to login");
                                 }
                                 else{
-                                    alert("thanks for registering");
+                                    //alert("thanks for registering");
+                                    localStorage.setItem("firstName",res.firstName);
+                                    localStorage.setItem("lastName",res.lastName);
+                                    localStorage.setItem("email",res.mail);
                                     window.location.replace("main.html");
 
                                 }

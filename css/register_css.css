@@ -1,9 +1,36 @@
 body {
-    background-image: url(http://kreativo.se/backlogin.jpg);
+    background-image: url(http://getwallpapers.com/wallpaper/full/6/5/d/632227.jpg);
+    background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial;
     padding-top: 20px;
 }
-
+h1 
+{
+    font-family: 'Courgette', cursive;
+    margin-left: 30px ;
+    line-height: 65px;
+    font-weight: normal;
+    display:inline-block;
+    color: rgb(70, 184, 219);
+}
+nav
+{
+  width: 500px;
+  height: 65px;
+  
+  display:inline-block;
+  float: right;
+}
+nav a 
+{
+   line-height: 65px;
+   text-decoration: none;
+   font-family: 'Roboto Slab', serif;
+   font-weight: 300;
+   padding-left: 30px;
+   padding-right: 30px;
+   color: rgb(70, 184, 219);
+}
 .container {
     width: 406px;
     max-width: 406px;
@@ -19,6 +46,8 @@ body {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    margin-left: 400px;
+    margin-top: 100px;
     display: table;
     position: static;
 }
