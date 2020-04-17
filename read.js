@@ -309,10 +309,10 @@ function hello6(txt,idCourse,file2,file3)
             document.getElementById("app").innerHTML = `<h2 class="app-title"> question (${data.length} results)<h2>
             ${data.map(function(pet){
              return `
-             <div class="animalques">
-             <h2 class="pet-nameques">  <a> <button id=${pet.idquestions} value = ${pet.name} onclick = "Hello4(this.id)">${pet.name}</button> </a></h2> 
-             <p>${pet.txt}</p>
-             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" onerror="this.style.display='none'">            
+             <div id=${pet.idquestions} onclick = "Hello4(this.id)" class="animalques">
+             <h2 class="pet-nameques"> </h2> 
+             <p>Written By: ${pet.name}  <br /> ${pet.txt}</p>
+             <img class="pet-photoques" src="data:image/jpg;base64,${pet.imgPath}" alt="Red dot" onerror="this.style.display='none'" >            
              </div>
              `    
             }).join('')}
