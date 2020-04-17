@@ -76,8 +76,8 @@ function Hello() {
             
        
  
-            <p id="b64" > </p>
-            <p id="b65" > </p>
+            <p hidden id="b64" > </p>
+            <p hidden id="b65" > </p>
            <label for="subject" class="pet-photo4">Add question</label>
            <textarea class="textarea2" id="subject" name="subject" placeholder="Write something.." style="width:400px" ></textarea>
  
@@ -167,8 +167,8 @@ function Hello() {
       
        
  
-                    <p id="b64" > </p>
-                    <p id="b65" > </p>
+                    <p hidden id="b64" > </p>
+                    <p hidden id="b65" > </p>
                    <label for="subject" class="pet-photo4">Write comment</label>
                    <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
          
@@ -251,28 +251,26 @@ function Hello() {
              </div>
                  `    
                 }).join('')}
-                <div id="myDIV" class="animal">
-           
-                </div>
-                    <div>
-    
-        <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
+                
+                <div id="myDIV" class="animal2">
+
+                <form action="javascript:hello5(${data[0].idquestions},(subject.value),${data[0].idCourse},(b64.innerHTML),(b65.innerHTML))" enctype="multipart/form-data" >
       
        
  
-           <p id="b64" > </p>
-           <p id="b65" > </p>
-          <label for="subject" class="pet-photo4">Write comment</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
-
-          <label for="myfile">Select a file:</label>
-          <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
-                  
-          <input type="submit" value="submit" class="pet-photo4">
-      
-        </form>
+                    <p hidden id="b64" > </p>
+                    <p hidden id="b65" > </p>
+                   <label for="subject" class="pet-photo4">Write comment</label>
+                   <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" class="textarea2"></textarea>
+         
+                   <label for="myfile" class="pet-photo4">Select a file:</label>
+                   <input type="file" id="myfile" name="myfile" onchange="javascript:test(myfile.files[0])">
+                           
+                   <input type="submit" value="submit" class="pet-photo4">
+               
+                 </form>
         
-      </div>
+             </div>
                      `
                     hidediv();
  
@@ -321,8 +319,8 @@ function hello6(txt,idCourse,file2,file3)
       
        
  
-            <p id="b64" > </p>
-            <p id="b65" > </p>
+            <p hidden id="b64" > </p>
+            <p hidden id="b65" > </p>
            <label for="subject" class="pet-photo4">Add question</label>
            <textarea class="textarea2" id="subject" name="subject" placeholder="Write something.." style="width:400px" ></textarea>
  
