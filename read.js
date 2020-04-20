@@ -138,7 +138,7 @@ function Hello() {
                              </div>
                              <div class="col-md-10">
                                  <p>
-                                     <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong> ${pet.name}</strong></a>
+                                     <a class="float-left"><strong> ${pet.name}</strong></a>
                                      <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                                      <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                                      <span class="float-right"><i class="text-warning fa fa-star"></i></span>
@@ -230,7 +230,7 @@ function Hello() {
                              </div>
                              <div class="col-md-10">
                                  <p>
-                                     <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong> ${pet.name}</strong></a>
+                                     <a class="float-left"><strong> ${pet.name}</strong></a>
                                      <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                                      <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                                      <span class="float-right"><i class="text-warning fa fa-star"></i></span>
