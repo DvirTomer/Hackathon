@@ -5,4 +5,4 @@ Huck The Virus Hackathon at Ariel University - Built a web platform for students
 
 Server connection:
 
-https://github.com/DvirTomer/Hackathon
+https://github.com/DvirTomer/HttpServer
